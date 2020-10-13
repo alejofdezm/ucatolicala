@@ -1,0 +1,57 @@
+Crear imagen docker (solo la primera vez): 
+docker build -t laravelserver ./docker/ 
+
+levantar ambiente de desarrollo: 
+docker-compose -f ./docker/docker-compose.yml up -d
+  
+  docker exec -it servidorlr bash
+
+Instalmos laravel:
+        composer global require laravel/installer
+        
+Crearmo el proyecto:
+--composer create-project --prefer-dist laravel/laravel:^7.0 ucatolica
+
+-----composer create-project --prefer-dist laravel/laravel ucatolica -*--solo en caso de querer usar la ultima versión
+
+nos movemos de directorio:
+cd /var/www/html/ucatolica/ 
+
+damos permisos a la carpetas de laralvel, para su ejecución:
+chmod -R 777 ./
+nos movemos de directorio:
+cd /var/www/html/ucatolica/ 
+
+Generamos la autenticación basica de Laravel:
+primero instalamos laravel/ui
+composer require laravel/ui "^2.0"
+Instalamos NPM:
+apt install npm
+segundo bootstrap como ambiente ui:
+php artisan ui bootstrap
+chmod -R 777 ./
+npm install 
+Luego instalamos el tipo de autenticación
+php artisan ui bootstrap --auth
+chmod -R 777 ./
+npm install 
+npm run dev
+
+solucionar problema con babel: 
+npm install --save-dev gulp-babel @babel/core @babel/preset-env
+npm run dev
+
+Antes vamos a nuestro phpmyadmin a crear nuestra base de datos
+php artisan migrate:refresh --seed
+
+Autenticación:
+https://medium.com/@cvallejo/roles-usuarios-laravel-2e1c6123ad
+
+
+En caso de querer generara una nueva llave (ubicarse en la carpeta principal):
+php artisan key:generate
+ponemos el archivo de configuracion en cache (si lo modificamos, lo tenemos que correr), con el fin de hacer mas rapido su acceso de lectura:
+php artisan config:cache
+
+
+
