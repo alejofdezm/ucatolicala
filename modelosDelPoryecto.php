@@ -1,5 +1,6 @@
 Ejecutar  primero:
 
+php artisan make:model Tipo -m
 php artisan make:model Categoria -m
 php artisan make:model Marca -m
 php artisan make:model Producto -m
