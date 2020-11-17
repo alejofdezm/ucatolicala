@@ -1,3 +1,15 @@
+Ejecutar  primero:
+
+php artisan make:model Categoria -m
+php artisan make:model Marca -m
+php artisan make:model Producto -m
+php artisan make:model Facturaenc -m
+php artisan make:model Facturadet -m
+
+
+Las tablas deben de quedar de la siguiente manera:
+
+   
    Schema::create('tipos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
