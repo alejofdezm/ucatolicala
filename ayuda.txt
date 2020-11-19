@@ -58,90 +58,10 @@ php artisan migrate:refresh --seed
 Autenticación:
 https://medium.com/@cvallejo/roles-usuarios-laravel-2e1c6123ad
 
+https://github.com/alejofdezm/ucatolicala/blob/main/modelosDelPoryecto.php
 
-php artisan make:model Tipo -m
-
-php artisan make:model Categoria -m
-        tipo_id
-
-php artisan make:model Marca -m
-       
-
-php artisan make:model Producto -m
-        marca_id
-        categoria_id
-
-php artisan make:model Facturaenc -m
-
-php artisan make:model Facturadet -m
-        facturaenc_id
-        producto_id
-
-analisis de datos historico - conversar.
-investigar sobre indices de base de datos.
-
-
-
-En caso de querer generara una nueva llave (ubicarse en la carpeta principal):
-php artisan key:generate
-ponemos el archivo de configuracion en cache (si lo modificamos, lo tenemos que correr), con el fin de hacer mas rapido su acceso de lectura:
-php artisan config:cache
-
-Docker:
-https://cerebro-digital.com/panel/knowledgebase/63/Comandos-frecuentes-de-Docker.html
-
-https://github.com/guzzle/guzzle
-
-http://dev-web.refineddata.com/api/ (de interes para muchos que quieran integrarse con moodle)
-
-token: 18c1d7c41dcb8be04fe229254d97d714
-
-http://127.0.0.1:8082/webservice/rest/server.php?wstoken=18c1d7c41dcb8be04fe229254d97d714&wsfunction=core_course_get_courses&moodlewsrestformat=json
-http://127.0.0.1:8082/user/editadvanced.php?id=-1
-
-
-core_course_get_categories
-core_course_get_courses
-core_course_get_courses_by_field
-core_course_get_enrolled_users_by_cmid
-core_enrol_get_enrolled_users
-core_enrol_get_users_courses
-core_group_add_group_members
-core_user_update_users
-enrol_manual_unenrol_users
-
-core_group_get_course_groups
-core_role_assign_roles
-core_role_unassign_roles
-core_user_create_users
-core_user_get_course_user_profiles
-core_user_get_users
-core_user_get_users_by_field
-enrol_manual_enrol_users
-
-instalar ping:
-        apt-get update && apt-get install -y iputils-ping
-
-php artisan make:model Matricular -m
-
-php artisan make:seeder MatricularTableSeeder
-
-php artisan migrate:refresh --seed
-
-php artisan make:model Paisesmoodle -m
-
-php artisan make:seeder PaisesmoodleTableSeeder
-
-php artisan make:controller MatriculaController
-
-
-//npm set audit false
-pico .npmrc
-fund=false
-
-hacer bk de base de datos mysql (opcional):
-cd /compartida
-mysqldump -u root -pNuevo123* ucatolicacurso > ucatolicacursov1.sql
+https://laravel.com/docs/8.x/filesystem
+php artisan storage:link
 
 
 
