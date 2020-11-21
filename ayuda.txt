@@ -8,24 +8,32 @@
 7- npm install 
 8- npm run dev
 
+para ir a la administracion de base de datos: http://localhost/phpmyadmin
+para ir al sitio: http://localhost/
+
 ***Para los de docker, seguir los siguientes comandos: 
 
-Crear imagen docker (solo la primera vez): 
+Crear imagen docker ***(solo la primera vez)***: 
 docker build -t laravelserver ./docker/ 
 
-levantar ambiente de desarrollo: 
+levantar ambiente de desarrollo (cada vez que reiniciamos nuestra maquina o detenemos docker): 
 docker-compose -f ./docker/docker-compose.yml up -d
-  
-  docker exec -it servidorlr bash
 
+**Ingreseamos al contenedor donde tenemos respondiendo a nuestro sistema con laravel:
+
+  docker exec -it servidorlr bash
+  
+  **Si queremos salir del contenedor, solo escriban exit en la terminal y si quieren volver a ingresar, con el comando anterior.
 
 Instalmos laravel:
         composer global require laravel/installer
         
 Crearmo el proyecto:
---composer create-project --prefer-dist laravel/laravel:^7.0 ucatolica
 
------composer create-project --prefer-dist laravel/laravel ucatolica -*--solo en caso de querer usar la ultima versión
+-- composer create-project --prefer-dist laravel/laravel:^7.0 ucatolica
+
+
+-----(solo para ultimas versiones - en nuestro caso, vamos a usar solo el comando anterior)composer create-project --prefer-dist laravel/laravel ucatolica -*--solo en caso de querer usar la ultima versión
 
 nos movemos de directorio:
 cd /var/www/html/ucatolica/ 
@@ -62,6 +70,16 @@ npm run dev
 solucionar problema con babel: 
 npm install --save-dev gulp-babel @babel/core @babel/preset-env
 npm run dev
+
+
+Para ir al servidor  de administración de docker: http://localhost:9000
+
+para ir a la administracion de base de datos: http://localhost:8083
+para ir al sitio: http://localhost:8081
+
+Para ir al servidor de correo: http://localhost:8084
+
+
 
 ***FIn Docker
 
