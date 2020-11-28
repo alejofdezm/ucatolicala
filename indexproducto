@@ -1,0 +1,51 @@
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">Dashboard de productos</div>
+
+                <div class="card-body">
+                
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+
+                    {{ $listaDeProductos->links()}}
+
+                    <div class="row row-cols-1 row-cols-md-3">
+           
+                    
+                            @foreach($listaDeProductos as $producto)
+                            <div class="col mb-4">
+                                <div class="card">
+                                    <img src="../storage/{{ $producto->urlimagen}}" class="card-img-top" alt="{{ $producto->nombre}}" height="200px">
+                                    <div class="card-body">
+                                    <h5 class="card-title">{{ $producto->nombre}}</h5>
+                                    <p class="card-text"><small class="text-muted"><center><b>Marca:</b> {{ $producto->Marca()->first()->nombre}} - <b>Categoría:</b> {{ $producto->Categoria()->first()->nombre}}<br /><b>Tipo:</b> {{ $producto->Categoria()->first()->Tipo()->first()->nombre}}</center></small></p>
+                                    </div>
+                                    <div class="card-footer">                                
+                                        <div  class="col-md-12">
+                                            <i>Cantidad: </i><b>{{ $producto->cantidad }}</b>
+                                        </div>                                
+                                        <div class="col-md-12">
+                                            <i>Precio: </i><b>{{ $producto->monto }}</b>
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                    </div>
+
+                    {{ $listaDeProductos->links()}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
