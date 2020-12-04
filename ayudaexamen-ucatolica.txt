@@ -1,0 +1,66 @@
+1- creamos modelo y tabla para migrar: 
+
+	Nombre tabla y modelo: Verdura	
+	Comando: php artisan make:model Verdura -m
+	
+2-	Agregamos columnas a tablas nueva:
+			$table->string('nombre');
+            $table->string('detalle');
+            $table->decimal('cantidad', 10, 2);
+            $table->decimal('monto', 10, 2);
+			
+3- Creamos controlador:
+
+	php artisan make:controller VerduraController		
+
+4- Agregamos autenticación para nuevo controlador:
+			  public function __construct()
+					{
+						$this->middleware('auth');
+					}	
+5- Agregamos gatos de ejemplo para la tabla que acabamos de crear:
+
+	php artisan make:seeder VerduraTableSeeder	
+	
+	5.1- Agregamos referencia al modelo de verdura "use":
+			use App\Verdura;
+	5.2- Agregamos datos de ejemplo:
+		for($i=0; $i < 50; $i++)
+        {
+            $verdura = new Verdura();
+            $verdura->nombre = 'verdura ' . ($i + 1);
+            $verdura->detalle = 'detalle de vedura fresca y muy rica, Codigo: ' . (($i + 1) * 100);
+            $verdura->cantidad = (($i + 1) * 2);
+            $verdura->monto = (($i + 1) * 600);
+            $verdura->save();
+        }
+		
+	5.3- invocamos el seeder creado actualmente, para luego migrarlos datos:
+	
+		$this->call(VerduraTableSeeder::class);
+		
+	5.4- Migramos los datos:
+		php artisan migrate:refresh --seed
+		
+6- Usuarios que se usaran:
+	Administrador:
+		usr: admin@domain.com
+		pass: admin123
+	
+	Colaborador:		
+		usr: colaborador@domain.com
+		pass: colab123
+     
+    Usuario sin privilegios de crear verdura:
+		usr: usuario@domain.com
+		pass: user123
+		
+7- Hacemos referencia de la tabla  y modelo verdura en el controlador verdura:
+		use App\Verdura;
+		
+	7.1- Listar verduras de pruebas - hacer prueba de acceso a base de datos.
+
+
+		
+		
+	
