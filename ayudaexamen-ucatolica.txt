@@ -63,4 +63,20 @@
 
 		
 		
+Descargar Archivo para examen:
+
+https://drive.google.com/file/d/19XGJtuX9_l1PtpjjHP8sqg_3iXOpwYru/view?usp=sharing		
+
+github:
+	Todo el repositorio: https://github.com/alejofdezm/ucatolicala/tree/main
+	Solo al del examen: https://github.com/alejofdezm/ucatolicala/blob/main/ayudaexamen-ucatolica.txt
 	
+Video de explicación del examen: 
+		https://youtu.be/1diBwojTtiI
+
+Video para los que usan XAMPP:
+		https://youtu.be/CDKnLoFk1ms	
+
+Video para los que usan Docker:		
+		https://youtu.be/T6fRtU0qN9w
+		
